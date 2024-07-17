@@ -136,8 +136,7 @@ else:
     graph_name = path + f"/graph_future_net_{formatted_datetime}.png"  # Use the formatted date and time as a file name
     f1_thresh_graph_name = path + f"/f1_thresh_graph_{formatted_datetime}.png"  # Use the formatted date and time as a file name
 
-gt_path = 'csv/groundtruth_sorted.csv'  #groundtruth path
-# flag_path = 'csv/go_flag.csv'
+
 # oa_path = "csv/output_argot_flagged_10000_addedgos.csv"  #output argot path
 # oa_path = "csv/output_argot_flagged_1000000_addedgos.csv"  #output argot path
 oa_path = "csv/argot_output_flagged_def.csv"
@@ -149,17 +148,7 @@ oa_path = "csv/argot_output_flagged_def.csv"
 #tf.compat.v1.disable_eager_execution() #Disable eager execution
 #tf.enable_eager_execution()+
 
-# x_loss, y_loss, z_loss = funcs_15.init_loss_func_def()
-# z_loss = tf.convert_to_tensor(z_loss, dtype=tf.float32)
 
-#Retrieve the content of the groundtruth in list format
-gt_sorted = [] #The groundtruth is expected to be previously alphabetically sorted
-with (open(gt_path, 'r') as file): # Read the contents of the txt file
-    csv_reader=csv.reader(file)
-    for row in csv_reader:
-        gt_sorted.append(row)
-#Retrieve the position of the letters in the sorted ground truth
-# alpha_order = funcs_15.alpha_indexer(gt_path)
 
 data = pd.read_csv(oa_path)
 # data_flag = pd.read_csv(flag_path)

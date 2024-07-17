@@ -360,18 +360,11 @@ else:
     ex_sum_name = path + f"/random_future_net_extensive_summary_report_{formatted_datetime}.txt"
     graph_name = path + f"/random_future_net_graph_{formatted_datetime}.png"  # Use the formatted date and time as a file name
 
-gt_path = 'csv/groundtruth_sorted.csv'  # ground-truth path
 oa_path = "csv/output_argot_flagged_1000000_addedgos.csv"  # output argot path
 
 # tf.compat.v1.disable_eager_execution() #Disable eager execution
 # tf.enable_eager_execution()+
 
-# Retrieve the content of the ground-truth in list format
-gt_sorted = []  # The ground-truth is expected to be previously alphabetically sorted
-with (open(gt_path, 'r') as file):  # Read the contents of the txt file
-    csv_reader = csv.reader(file)
-    for row in csv_reader:
-        gt_sorted.append(row)
 
 data = pd.read_csv(oa_path)
 # data_flag = pd.read_csv(flag_path)
